@@ -21,7 +21,7 @@
     <file:outbound-channel-adapter id="file"
             mode="APPEND"
             charset="UTF-8"
-            directory="H:\ResearchDev\Workspace\spring-integration\si"
+            directory="H:\ResearchDev\Temp"
             filename-generator-expression="'${feed.file.name:SpringBlog}'"/>
 
 </beans>
