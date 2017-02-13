@@ -1,2 +1,2 @@
 # springleaf
-The spring guides repo
+The spring guides repo for training
