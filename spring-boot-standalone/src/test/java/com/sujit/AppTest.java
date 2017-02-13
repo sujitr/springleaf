@@ -1,38 +1,31 @@
 package com.sujit;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.Rule;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.rule.OutputCapture;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class AppTest {
+    @Autowired
+    private CommandLineRunner clr;
+    
+    @Rule
+    public OutputCapture outputCapture = new OutputCapture();
+    
+    @Test
+    public void checkCommandLineOutput() throws Exception {
+        this.clr.run();
+        // verify any changes
+        String output = this.outputCapture.toString();
+        Assert.assertTrue(output, output.contains("Standalone Spring Boot application - Hello World"));
+        
     }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+    
 }
