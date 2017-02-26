@@ -12,6 +12,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.ResourceProcessor;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +40,13 @@ public class SpringJpaRestApplication {
 }
 
 
-@RestController
+/**
+ * Using a Rest Controller is not always a best way to 
+ * expose a REST API. It can be done more cleanly with 
+ *  a new Spring feature on top of the repository itself.
+ */
+
+/*@RestController
 class ReservationRestController {
 	@RequestMapping("/reservations")
 	Collection<Reservation> reservations(){
@@ -43,13 +55,26 @@ class ReservationRestController {
 	
 	@Autowired 
 	private ReservationRepository reservationRepository;
-	
-	
+}*/
+
+
+/**
+ * This method automatically exposes the repository as REST interface
+ * to browser as HAL+JSON (HATEOAS) documents
+ */
+@RepositoryRestResource
+interface ReservationRepository extends JpaRepository<Reservation, Long> {
+	Collection<Reservation> findByReservationName (@Param("rn") String rn);
 }
 
-
-interface ReservationRepository extends JpaRepository<Reservation, Long> {
-	Collection<Reservation> findByReservationName (String rn);
+@Component
+class ReservationsResourceProcessor implements ResourceProcessor<Resource<Reservation>> {
+	@Override
+	public Resource<Reservation> process(Resource<Reservation> resource) {
+		resource.add(new Link("http://s3.com.images/"+resource.getContent().getId()+".jpg","profile-photo"));
+		return resource;
+	}
+	
 }
 
 
