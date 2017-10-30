@@ -2,7 +2,7 @@
 
 This is a standalone command line application, of Hello World sort with very basic shell.
 It uses [Spring Boot Maven Plugin](https://docs.spring.io/spring-boot/docs/current/maven-plugin/index.html) to run from command line. 
-Which is very similar to normal [Exec Maven Plugin] (http://www.mojohaus.org/exec-maven-plugin/index.html) to call main method, but with the Spring
+Which is very similar to normal [Exec Maven Plugin](http://www.mojohaus.org/exec-maven-plugin/index.html) to call main method, but with the Spring
 CommandLineRunner bean.
 
 #### Running the program from command line
