@@ -25,7 +25,6 @@ public class AppTest {
         // verify any changes
         String output = this.outputCapture.toString();
         Assert.assertTrue(output, output.contains("Standalone Spring Boot application - Hello World"));
-        
     }
     
 }
