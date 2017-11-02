@@ -47,5 +47,11 @@ Although, please remember that this command is bit different from standard `mvn 
 particular spring boot run command does not execute tests.
 
 #### Current status of this project
-The test run part of this project is having some issues, which is currently being investigated. This issue shows up when you use a normal build operation of maven 
-`mvn clean install`.
+project building and executing normally
+
+#### Issue history
+Unit test class was failing with below error - 
+
+> java.lang.NoSuchMethodError: org.springframework.util.Assert.state(ZLjava/util/function/Supplier;)V
+
+This issue with `mvn clean install` and `mvn test` has been resolved now. Improper testing dependency in pom file was the reason behind the test failures.
