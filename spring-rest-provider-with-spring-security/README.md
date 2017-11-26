@@ -13,12 +13,12 @@ implementation with Maven.
 But we are going to try a new implementation with Gradle and with our trusted Hello World! REST service on SpringBoot. 
 
 Guides to consult - 
-[link-1](https://dzone.com/articles/secure-rest-services-using).
-[link-2](http://www.springboottutorial.com/securing-rest-services-with-spring-boot-starter-security).
+1. [link-1](https://dzone.com/articles/secure-rest-services-using).
+2. [link-2](http://www.springboottutorial.com/securing-rest-services-with-spring-boot-starter-security).
 
 
 #### Iteration One
-Just added the spring security dependency, which just adds the default filter-chain based security check with every request. In this case when you start the service, 
+Just added the spring security dependency, which adds default filter-chain based security check with every request. In this case when you start the service, 
 logs would show something like - 
 
 ```
