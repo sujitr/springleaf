@@ -15,6 +15,7 @@ But we are going to try a new implementation with Gradle and with our trusted He
 Guides to consult - 
 1. [link-1](https://dzone.com/articles/secure-rest-services-using).
 2. [link-2](http://www.springboottutorial.com/securing-rest-services-with-spring-boot-starter-security).
+3. [link-3](https://www.codesandnotes.be/2014/09/21/beginning-spring-security-authentication-on-spring-boot/)
 
 
 #### Iteration One
@@ -27,10 +28,18 @@ Mapping filter: 'springSecurityFilterChain' to: [/*]
 Using default security password: 062d0f1c-6a26-4204-8cb0-44327de064f4
 ```
 
-And after that if you try accessing the REST source link, you should get a 401 HTTP error.
+And after that if you try accessing the REST source link, you should get a 401 HTTP error. This is HTTP Basic authentication.
 
 #### Iteration Two
-Configuring custom User and Roles for access restrictions
+Overriding security details in a properties file. Still this is HTTP Basic authentication. And multiple users cannot be supported here.
+
+#### Iteration Three
+Configuring custom User and Roles for access restrictions, by building our own AuthenticationManager configuration. The easiest way is to extend an instance of a WebSecurityConfigurerAdapter and override whatever we need, then expose that adapter as a bean.
+However HTTP Basic authentication is unavailable here : Spring Security now presents you a basic form to enter your credentials.
+
+#### Iteration Four
+In order to restore the HTTP Basic authentication, we override another configuration() method from the extended WebSecurityConfigurerAdapter.
+
 
 
 
