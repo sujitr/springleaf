@@ -15,7 +15,8 @@ But we are going to try a new implementation with Gradle and with our trusted He
 Guides to consult - 
 1. [link-1](https://dzone.com/articles/secure-rest-services-using).
 2. [link-2](http://www.springboottutorial.com/securing-rest-services-with-spring-boot-starter-security).
-3. [link-3](https://www.codesandnotes.be/2014/09/21/beginning-spring-security-authentication-on-spring-boot/)
+3. [link-3](https://www.codesandnotes.be/2014/09/21/beginning-spring-security-authentication-on-spring-boot/).
+4. [link-4](https://www.codesandnotes.be/2014/10/31/restful-authentication-using-spring-security-on-spring-boot-and-jquery-as-a-web-client/).
 
 
 #### Iteration One
