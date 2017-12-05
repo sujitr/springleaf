@@ -1,0 +1,16 @@
+*.sw?
+.#*
+*#
+*~
+bin
+build
+target
+si
+dependency-reduced-pom.xml
+*.sublime-*
+/scratch
+.gradle
+/target/
+/.settings/
+/.classpath
+/.project
