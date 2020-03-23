@@ -37,3 +37,5 @@ for you as endpoints -
 * DELETE
 * PUT
 * PATCH
+
+This example follows the tutorial at - https://developersoapbox.com/creating-a-rest-api-effortlessly-with-spring-rest-repositories/
