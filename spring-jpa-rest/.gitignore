@@ -1,14 +1,13 @@
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
+*.class
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
+*.jar
+!gradle-wrapper.jar
+*.war
+*.ear
+
+.gradle
+/build
+/out
 
 ### IntelliJ IDEA ###
 .idea
@@ -16,11 +15,4 @@
 *.iml
 *.ipr
 
-### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-/bin/
+

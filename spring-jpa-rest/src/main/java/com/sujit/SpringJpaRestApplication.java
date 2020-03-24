@@ -31,10 +31,11 @@ public class SpringJpaRestApplication {
 	@Bean
 	CommandLineRunner runner(ReservationRepository rr){
 		return args -> {
-			Arrays.asList("Sujit,Harish,Kittu,Sivanand".split(","))
+			Arrays.asList("Les,Josh,Phil,Sasha,Peter".split(","))
 				.forEach(n -> rr.save(new Reservation(n)));
 			
 			rr.findAll().forEach(System.out::println);
+			rr.findByReservationName("Les").forEach(System.out::println);
 		};
 	}
 }
@@ -44,9 +45,11 @@ public class SpringJpaRestApplication {
  * Using a Rest Controller is not always a best way to 
  * expose a REST API. It can be done more cleanly with 
  *  a new Spring feature on top of the repository itself.
+ *  Like either JpaRepository or CrudRepository.
  */
 
-/*@RestController
+/*
+@RestController
 class ReservationRestController {
 	@RequestMapping("/reservations")
 	Collection<Reservation> reservations(){
@@ -67,6 +70,12 @@ interface ReservationRepository extends JpaRepository<Reservation, Long> {
 	Collection<Reservation> findByReservationName (@Param("rn") String rn);
 }
 
+/**
+ * This component helps add extra links to the repository resources.
+ * In this case it's adding a profile photo link based on the id of the
+ * underlying reservation resource.
+ * For example, each reservation has a profile photo attached to it.
+ */
 @Component
 class ReservationsResourceProcessor implements ResourceProcessor<Resource<Reservation>> {
 	@Override

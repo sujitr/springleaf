@@ -30,6 +30,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-jersey')
-	runtime('org.hsqldb:hsqldb')
+	// compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+	runtimeOnly 'com.h2database:h2'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
