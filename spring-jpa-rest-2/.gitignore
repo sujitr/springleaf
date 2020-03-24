@@ -1,13 +1,14 @@
 *.class
 
 *.jar
+!gradle-wrapper.jar
 *.war
 *.ear
 
 .gradle
-/build/
+/build
 out/
-!gradle-wrapper.jar
+
 
 .idea/**/gradle.xml
 .idea/**/libraries
