@@ -5,12 +5,12 @@ implement fully functioning REST endpoints, automatically
 with the Spring Boot & JPA, without writing any explicit
 controller and rest handlers.
 
-Spring Boot supports a few well known in-memory databases out of the box, for example with H2, HSQL or Apache Derby).
-But for other databases like SQLite and more general propietary
-products, you have to look deeper in making the connection
+Spring Boot supports a few well known in-memory databases out of the box (for example with H2, HSQL or Apache Derby).
+But for other databases like SQLite and more general proprietary
+products, you have to look deeper in making the db connection
 from Spring Boot to the database.
 
-That's important because, Spring be default use Hibernate as the
+That's important because, Spring by default use Hibernate as the
 JPA implementation and Hikari for connection pooling. This combination
 works flawlessly with aforementioned databases. But for others, you
 need to do considerable plumbing.
@@ -38,4 +38,4 @@ for you as endpoints -
 * PUT
 * PATCH
 
-This example follows the tutorial at - https://developersoapbox.com/creating-a-rest-api-effortlessly-with-spring-rest-repositories/
+This example follows this [tutorial](https://developersoapbox.com/creating-a-rest-api-effortlessly-with-spring-rest-repositories/)
